@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Memory Game</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+  <div class="audio">
+    <audio id="audio" controls autoplay volume="0.1">
+      <source autoplay src="./audio/theme3.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div id="mute" class="mute fas fa-volume-up"></div>
+
+  <div class="button-wrap">
+    <button id="button">Start Game</button>
+    <br>
+    <form>
+      <select name="level" id="level">
+        <option value="60">Easy</option>
+        <option value="30">Medium</option>
+        <option value="15">Hard</option>
+      </select>
+    </form>
+    <p id="time"></p>
+  </div>
+
+  <div class="highscore" id="highscore">
+    <h3>Highscore:</h3>
+    <div class="highscore-records">
+      <img src="./img/crown.png" alt="crown">
+    </div>
+    <a href="#" id="confirmHS">OK</a>
+  </div>
+
+
+  <section class="memory-game" id="memory-game">
+    <div class="memory-card" data-framework="stark">
+      <img class="front-face" alt="Stark" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="stark">
+      <img class="front-face" alt="Stark" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="lannister">
+      <img class="front-face" alt="Lannister" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="lannister">
+      <img class="front-face" alt="Lannister" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="targaryen">
+      <img class="front-face" alt="Targaryen" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="targaryen">
+      <img class="front-face" alt="Targaryen" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="tully">
+      <img class="front-face" alt="Tully" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="tully">
+      <img class="front-face" alt="Tully" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="greyjoy">
+      <img class="front-face" alt="Greyjoy" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="greyjoy">
+      <img class="front-face" alt="Greyjoy" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="tyrell">
+      <img class="front-face" alt="Tyrell" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="tyrell">
+      <img class="front-face" alt="Tyrell" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="baratheon">
+      <img class="front-face" alt="Baratheon" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="baratheon">
+      <img class="front-face" alt="Baratheon" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+    <div class="memory-card" data-framework="arryn">
+      <img class="front-face" alt="Arryn" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+    <div class="memory-card" data-framework="arryn">
+      <img class="front-face" alt="Arryn" />
+      <img class="back-face" src="./img/got.png" alt="Got" />
+    </div>
+
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
