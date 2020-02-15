@@ -6,7 +6,6 @@
 
 body {
   height: 100vh;
-  display: flex;
   background-image: url('./img/gotcover4.jpg');
   background-size: cover;
   background-color: #000;
@@ -14,13 +13,13 @@ body {
 }
 
 .memory-game {
-  width: 600px;
-  height: 600px;
+  width: 100vw;
+  height: 100vw;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
-
+  padding: 7px;
 }
 
 .memory-card {
@@ -59,9 +58,9 @@ body {
 }
 
 #button{
-  width: 200px;
-  height: 75px;
-  font-size: 25px;
+  width: 180px;
+  height: 50px;
+  font-size: 18px;
   text-align: center;
   border-radius: 5px;
   border: 2px solid brown;
@@ -70,36 +69,37 @@ body {
 }
 
 .button-wrap{
-  position: fixed;
-  top: 40%;
-  left: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
+
 #time{
   color: #fff;
-  font-size: 50px;
+  text-shadow: 1px 1px 2px darkgoldenrod;
+  font-size: 30px;
   padding-top: 30px;
   text-align: center; 
+  height: 60px;
 }
 #level{
   padding: 10px 10px;
   margin-top: 15px;
-  width: 200px;
-  height: 60px;
-  font-size: 25px;
+  width: 180px;
+  height: 40px;
+  font-size: 15px;
   background-color: darkgoldenrod;
   color: #fff;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid darkgoldenrod;
 }
 
 .highscore{
   display: none;
-  width: 600px;
-  height: 400px;
   position: absolute;
   top: 35%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 10px;
+  right: 10px;
   z-index: 5;
   background-color: #fff;
   text-align: center;
@@ -115,9 +115,9 @@ body {
 }
 
 .highscore p{
-  padding: 10px 90px;
+  padding: 10px 55px;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #confirmHS{
@@ -127,21 +127,22 @@ body {
   background: black;
   color: #fff;
   text-decoration: none;
-  margin-top: 70px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-radius: 5px;
 }
 
 .highscore-records{
-  height: 162px;
+  height: 129px;
   overflow: hidden;
   position: relative;
 }
 
 .highscore-records img{
   position: absolute;
-  height: 43px;
-  width: 57px;
-  left :20px;
+  height: 35px;
+  width: 40px;
+  left :10px;
   top: 3px;
 }
 
@@ -151,15 +152,85 @@ body {
 }
 
 .mute{
-  width: 100px;
-  height: 100px;
-  font-size: 50px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
   position: fixed;
   color:white;
-  top: 30px;
-  left: 60px;
+  top: 10px;
+  left: 10px;
 }
 
 #mute{
   display: none;
+}
+
+
+/* RESPONSIVE */
+
+@media only screen and (min-width: 430px) {
+  .memory-game {
+    width: 420px;
+    height: 420px;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 620px) {
+  .memory-game {
+    width: 600px;
+    height: 600px;
+  }
+  .highscore{
+    width: 600px;
+    height: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .highscore p{
+    padding: 10px 90px;
+    font-size: 30px;
+  }
+  #confirmHS{
+    margin-top: 70px;
+  }
+  .highscore-records img{
+    height: 43px;
+    width: 57px;
+    left :20px;
+  }
+  .highscore-records{
+    height: 162px!important;
+  }
+}
+@media only screen and (min-width: 1150px) {
+  body {
+    display: flex;
+  }
+  .button-wrap{
+    position: fixed;
+    top: 40%;
+    left: 50px;
+  }
+  .mute{
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    top: 30px;
+    left: 60px;
+  }
+  #time{
+    font-size: 50px;
+    height: 100px;
+  }
+  #level{
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    border-radius: 2px;
+  }
+  #button{
+    width: 200px;
+    height: 75px;
+    font-size: 25px;
+  }
 }

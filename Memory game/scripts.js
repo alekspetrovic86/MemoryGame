@@ -115,6 +115,7 @@ function timer() {
     console.log(counter());
     alert('Vreme je isteklo!');
     location.reload();
+    document.getElementById('audio').pause();
   }
 
 }
