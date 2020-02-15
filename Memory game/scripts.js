@@ -3,7 +3,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let name;
+let name = "";
 
 let jsonString =
   `[
@@ -181,14 +181,13 @@ var gamelevel = "";
 
 //Highscore storrage
 var highscore = [];
-var n = 0;
+//var n = 0;
 
 
 function showHighscore() {
   function appear(){
     document.getElementById('highscore').style.display = 'block';
   }
-  setTimeout(appear,400);
   let recordtime = counter();
   let listol = document.querySelector('.highscore-records');
   if (localStorage['highscore'] === undefined || localStorage['highscore'] === '') {
@@ -201,7 +200,7 @@ function showHighscore() {
     gamelevel: gamelevel
   };
   highscore.push(obj);
-  for (n; n < highscore.length; n++) {
+  for (let n = 0; n < highscore.length; n++) {
     var str = '<p>' + (n + 1) + '. ' + highscore[n].name + ' ' + highscore[n].score + " " + "(" + highscore[n].gamelevel + ")" + '</p>';
     listol.innerHTML += str;
     //sort highscore by time
@@ -219,7 +218,8 @@ function showHighscore() {
     highscore = slice;
   }
   localStorage['highscore'] = JSON.stringify(highscore);
-
+  
+  setTimeout(appear,400);
 }
 
 
