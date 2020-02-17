@@ -160,10 +160,10 @@ function win() {
     }
   }
   if (c == cards.length) {
-    showHighscore();
     clearInterval(timesUp);
     clearInterval(countTime);
     document.getElementById('audio').pause();
+    showHighscore();
   }
 }
 
@@ -200,23 +200,23 @@ function showHighscore() {
     gamelevel: gamelevel
   };
   highscore.push(obj);
+  //sort highscore by time
+  function compare(a, b) {
+    if (a.score < b.score) {
+      return -1;
+    }
+    if (a.score > b.score) {
+      return 1;
+    }
+    return 0;
+  }
+  highscore.sort(compare);
   for (let n = 0; n < highscore.length; n++) {
     var str = '<p>' + (n + 1) + '. ' + highscore[n].name + ' ' + highscore[n].score + " " + "(" + highscore[n].gamelevel + ")" + '</p>';
     listol.innerHTML += str;
-    //sort highscore by time
-    function compare(a, b) {
-      if (a.score < b.score) {
-        return -1;
-      }
-      if (a.score > b.score) {
-        return 1;
-      }
-      return 0;
-    }
-    highscore.sort(compare);
-    let slice = highscore.slice(0, 10);
-    highscore = slice;
   }
+  let slice = highscore.slice(0, 10);
+  highscore = slice;
   localStorage['highscore'] = JSON.stringify(highscore);
   
   setTimeout(appear,400);
